@@ -1,0 +1,132 @@
+/* Custom styles for Item Counter */
+
+#videoContainer {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    cursor: crosshair;
+}
+
+#webcam {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#overlay {
+    border-radius: 8px;
+}
+
+#selectionBox {
+    border-style: dashed;
+    border-width: 2px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        border-color: #ef4444;
+        background-color: rgba(239, 68, 68, 0.2);
+    }
+    50% {
+        border-color: #dc2626;
+        background-color: rgba(220, 38, 38, 0.3);
+    }
+}
+
+
+/* Disabled button styles */
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background-color: inherit !important;
+}
+
+
+/* Range slider custom styling */
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: #374151;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    border: none;
+}
+
+
+/* Selection animation */
+
+.selecting {
+    cursor: crosshair !important;
+}
+
+
+/* Counter animation */
+
+#counter {
+    transition: all 0.3s ease;
+}
+
+#counter.updated {
+    transform: scale(1.2);
+    color: #22c55e;
+}
+
+
+/* Status indicators */
+
+.status-detecting {
+    color: #22c55e !important;
+}
+
+.status-waiting {
+    color: #fbbf24 !important;
+}
+
+.status-error {
+    color: #ef4444 !important;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .bg-gray-800 {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    #counter {
+        font-size: 2rem;
+    }
+    .flex-wrap {
+        justify-content: center;
+    }
+    button {
+        min-width: 120px;
+    }
+}
